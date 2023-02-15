@@ -1,0 +1,130 @@
+.fancySplash {
+    background-image: radial-gradient(#aaa 10%, transparent 10%);
+    background-size: 24px 24px;
+    background-color: rgb(255, 255, 255);
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #344767;
+
+    opacity: 0;
+}
+.fancySplash.enabled {
+    opacity: 1;
+}
+
+.fancySplash .layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 1s;
+    transition-delay: 3s;
+}
+.fancySplash.enabled .layer {
+    height: 90vh;
+}
+.fancySplash.out .layer {
+    transition-delay: 0s;
+    height: 100vh;
+}
+
+.fancySplash .logo {
+    transition: 0.5s ease-out;
+    height: 1000vw;
+}
+.fancySplash.enabled .logo {
+    height: 25vw;
+}
+.fancySplash.out .logo {
+    height: 30vw;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    transition-delay: 1s;
+}
+
+.fancySplash .spinner {
+    height: 30vw;
+    width: 30vw;
+    border-radius: 50%;
+    background: white;
+    animation: spin 700ms linear infinite forwards;
+    border: white solid 0.3rem;
+    transition: 1s;
+    transition-delay: 1s;
+}
+.fancySplash.enabled .spinner {
+    border-top-color: #cb0c9f;
+}
+.fancySplash.out .spinner {
+    border-top-color: white;
+    transition-delay: 1s;
+    transition-property: scale;
+    scale: 5;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.fancySplash .bg-cover {
+    background: radial-gradient(circle, transparent 20%, white 25%);
+    height: 100vh;
+    width: 100vw;
+    transition: 0.5s ease-in;
+    transition-delay: 400ms;
+}
+.fancySplash.enabled .bg-cover {
+    height: 1000vh;
+    width: 1000vw;
+}
+
+.fancySplash .status {
+    position: fixed;
+    bottom: 0;
+    opacity: 0;
+    height: 15vh;
+    width: 100%;
+
+    display: block;
+
+    font-size: 5vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 1s;
+    transition-delay: 3s;
+}
+.fancySplash.enabled .status {
+    bottom: 5vw;
+    opacity: 1;
+}
+.fancySplash.out .status {
+    bottom: 0;
+    opacity: 0 !important;
+    transition-delay: 0s;
+}
+
+.fancySplash.enabled .status.updated {
+    transition: 250ms ease-in-out;
+    transition-delay: 0;
+}
