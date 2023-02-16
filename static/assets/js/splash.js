@@ -65,6 +65,8 @@ class fancySplash {
 
         this.container = container;
 
+        await new Promise((resolve) => setTimeout(resolve, 5000));
+
         return this;
     }
 
