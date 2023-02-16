@@ -34,10 +34,13 @@ router.get("/update", (req, res) => {
     });
     temp.listen(3001);
 
-    console.log(exec("git pull").stdout);
-    console.log(exec("npm i").stdout);
+    console.log("Updating...");
+    console.log("Running git pull");
+    exec("git pull");
+    console.log("Running NPM install");
+    exec("npm i");
     console.log("Done");
-    //process.exit();
+    process.exit();
 });
 
 module.exports = router;
