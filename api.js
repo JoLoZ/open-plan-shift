@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const fs = require("fs");
-const { config } = require("./util");
+const { config, hash } = require("./util");
 
 router.get("/config", (req, res) => {
     res.json(config());
@@ -17,8 +17,15 @@ router.get("/translation", (req, res) => {
     );
 });
 
-router.get("/plan", (req, res)=>{
-    
-})
+router.get("/permissions", (req, res) => {
+    if (!fs.existsSync(`secrets/${hash(req.query.token)}.json`)) {
+        res.status(403).json([]);
+        return;
+    }
+    let info = JSON.parse(
+        fs.readFileSync(`secrets/${hash(req.query.token)}.json`, "utf-8")
+    );
+    res.json(info.permissions);
+});
 
 module.exports = router;

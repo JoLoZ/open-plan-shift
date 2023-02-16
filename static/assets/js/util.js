@@ -1,5 +1,5 @@
 let token = "";
-async function api(path, options) {
+async function api(path, options = {}) {
     var param = new URLSearchParams();
     for (const [key, value] of Object.entries(options)) {
         param.set(key, value);
@@ -8,7 +8,10 @@ async function api(path, options) {
     let req = await fetch(`/api/${path}?${param.toString()}`);
 
     if (req.status != 200) {
-        throw new Error(req.statusText);
+        let error = new Error(req.status.toString() + " - " + req.statusText);
+        error.code = req.status;
+        error.text = req.statusText;
+        throw error;
     }
 
     try {

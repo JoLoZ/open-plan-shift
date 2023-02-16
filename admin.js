@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const { closeApp } = require("./server");
-const { hasPerm, config } = require("./util");
+const { hasPerm, config, hash } = require("./util");
 
 router.use(express.json());
 
@@ -34,6 +34,7 @@ router.get("/update", (req, res) => {
     });
     temp.listen(3001);
 
+    //Actually update
     console.log("Updating...");
     console.log("Running git pull");
     exec("git pull");
@@ -41,6 +42,26 @@ router.get("/update", (req, res) => {
     exec("npm i");
     console.log("Done");
     process.exit();
+});
+
+router.get("/secret/add", (req, res) => {
+    let user = {
+        name: req.query.name,
+        permissions: req.query.permissions.split(","),
+    };
+    fs.writeFileSync(
+        `secrets/${hash(req.query.key)}.json`,
+        JSON.stringify(user)
+    );
+    res.json(user);
+});
+router.get("/secret/remove", (req, res) => {
+    if (!fs.existsSync(`secrets/${hash(req.query.key)}.json`)) {
+        res.json(false);
+        return;
+    }
+    fs.rmSync(`secrets/${hash(req.query.key)}.json`);
+    res.json(true);
 });
 
 module.exports = router;
