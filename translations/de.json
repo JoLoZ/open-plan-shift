@@ -1,8 +1,10 @@
 {
+    "init.load.util": "Lade Scripts",
     "init.load.nav": "Lade Seite...",
     "init.load.login": "Lade Login...",
     "init.load.theme": "Lade Aussehen...",
 
     "login.title": "Anmeldung",
-    "login.submit": "Anmelden"
+    "login.submit": "Anmelden",
+    "login.loading": "Anmeldung läuft..."
 }

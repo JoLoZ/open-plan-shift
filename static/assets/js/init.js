@@ -13,6 +13,9 @@ async function init() {
     await translationInit();
     translatePage();
 
+    await splash.status(_("init.load.util"));
+    await loadScript("/assets/js/util.js");
+
     await splash.status(_("init.load.nav"));
     await loadScript("/assets/js/page.js");
     page("login");

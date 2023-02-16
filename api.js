@@ -17,4 +17,8 @@ router.get("/translation", (req, res) => {
     );
 });
 
+router.get("/plan", (req, res)=>{
+    
+})
+
 module.exports = router;
