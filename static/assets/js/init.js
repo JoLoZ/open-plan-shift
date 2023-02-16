@@ -11,6 +11,7 @@ async function init() {
     await splash.status("Loading translations...");
     await loadScript("/assets/js/translate.js");
     await translationInit();
+    translatePage();
 
     await splash.status(_("init.load.nav"));
     await loadScript("/assets/js/page.js");

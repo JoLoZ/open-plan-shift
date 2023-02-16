@@ -1,5 +1,8 @@
 {
     "init.load.nav": "Loading page...",
     "init.load.login": "Loading login...",
-    "init.load.theme": "Loading theme..."
+    "init.load.theme": "Loading theme...",
+
+    "login.title": "Login",
+    "login.submit": "Login"
 }

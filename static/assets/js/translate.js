@@ -7,3 +7,10 @@ async function translationInit() {
 function _(key) {
     return translationStrings[key];
 }
+
+function translatePage() {
+    var els = document.querySelectorAll("[data-txt]");
+    for (const el of els) {
+        el.innerText = _(el.dataset.txt);
+    }
+}
