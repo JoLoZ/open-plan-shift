@@ -34,7 +34,7 @@
     justify-content: center;
 
     transition: 1s;
-    transition-delay: 3s;
+    transition-delay: 2s;
 }
 .fancySplash.enabled .layer {
     height: 90vh;
@@ -66,7 +66,7 @@
     animation: spin 700ms linear infinite forwards;
     border: white solid 0.3rem;
     transition: 1s;
-    transition-delay: 1s;
+    transition-delay: 4s;
 }
 .fancySplash.enabled .spinner {
     border-top-color: #cb0c9f;
@@ -115,7 +115,7 @@
     justify-content: center;
 
     transition: 1s;
-    transition-delay: 3s;
+    transition-delay: 2s;
 }
 .fancySplash.enabled .status {
     bottom: 5vw;
