@@ -1,3 +1,5 @@
 {
-    "init.load.system": "Lade Seite..."
+    "init.load.nav": "Lade Seite...",
+    "init.load.login": "Lade Login...",
+    "init.load.theme": "Lade Aussehen..."
 }

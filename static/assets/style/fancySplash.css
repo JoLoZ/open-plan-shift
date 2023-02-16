@@ -17,6 +17,9 @@
 .fancySplash.enabled {
     opacity: 1;
 }
+.fancySplash.out {
+    transition: 1s;
+}
 
 .fancySplash .layer {
     position: fixed;

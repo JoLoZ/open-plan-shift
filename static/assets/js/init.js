@@ -12,7 +12,17 @@ async function init() {
     await loadScript("/assets/js/translate.js");
     await translationInit();
 
-    await splash.status(_("init.load.system"))
+    await splash.status(_("init.load.nav"));
+    await loadScript("/assets/js/page.js");
+    page("login");
+
+    await splash.status(_("init.load.login"));
+    await loadScript("/assets/js/login.js");
+
+    await splash.status(_("init.load.theme"));
+    await loadScript("/assets/js/theme.js");
+
+    await splash.disable();
 }
 
 init();

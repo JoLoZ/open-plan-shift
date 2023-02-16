@@ -81,5 +81,10 @@ class fancySplash {
 
     async disable() {
         this.container.classList.add("out");
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+        this.container.style.opacity = 0;
+        this.container.style.pointerEvents = "none";
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        this.container.remove();
     }
 }
