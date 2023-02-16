@@ -1,11 +1,11 @@
 const express = require("express");
-const app = express();
-const fs = require("fs");
+const { runApp } = require("./server");
+const router = express.Router();
 
 require("./setup");
 
-app.use("/api", require("./api"));
-app.use("/api/admin", require("./admin"));
-app.use(express.static("static"));
+router.use("/api", require("./api"));
+router.use("/api/admin", require("./admin"));
+router.use(express.static("static"));
 
-app.listen(3001, () => console.log("Ready"));
+runApp(router);

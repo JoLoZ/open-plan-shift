@@ -1,7 +1,9 @@
+const { exec } = require("child_process");
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
-const { hash, hasPerm, config } = require("./util");
+const { closeApp } = require("./server");
+const { hasPerm, config } = require("./util");
 
 router.use(express.json());
 
@@ -20,6 +22,22 @@ router.get("/config/language", (req, res) => {
 router.get("/config/theme", (req, res) => {
     config("theme", req.query.theme);
     res.json(config());
+});
+
+router.get("/update", (req, res) => {
+    closeApp();
+
+    //Start up temp server
+    let temp = express();
+    temp.all("*", (req, res) => {
+        res.send(fs.readFileSync("./static/maintenance.html", "utf-8"));
+    });
+    temp.listen(3001);
+
+    console.log(exec("git pull").stdout);
+    console.log(exec("npm i").stdout);
+    console.log("Done");
+    //process.exit();
 });
 
 module.exports = router;
