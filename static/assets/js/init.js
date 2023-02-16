@@ -15,6 +15,7 @@ async function init() {
 
     await splash.status(_("init.load.util"));
     await loadScript("/assets/js/util.js");
+    await loadScript("/assets/js/misc.js");
 
     await splash.status(_("init.load.nav"));
     await loadScript("/assets/js/page.js");
@@ -25,6 +26,13 @@ async function init() {
 
     await splash.status(_("init.load.theme"));
     await loadScript("/assets/js/theme.js");
+
+    if (sessionStorage.getItem("token") != undefined) {
+        await splash.status(_("init.login"));
+        document.querySelector("#login-form input").value =
+            sessionStorage.getItem("token");
+        await login({ preventDefault: () => {} });
+    }
 
     await splash.disable();
 }

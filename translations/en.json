@@ -3,9 +3,19 @@
     "init.load.nav": "Loading page...",
     "init.load.login": "Loading login...",
     "init.load.theme": "Loading theme...",
+    "init.login": "Logging in...",
 
     "login.title": "Login",
     "login.submit": "Login",
     "login.loading": "Logging in...",
-    "login.error.token": "Invalid access code!"
+    "login.error.token": "Invalid access code!",
+
+    "generic.next": "Next",
+    "generic.back": "Back",
+    "generic.submit": "OK",
+
+    "setup.theme.heading": "Sitedesign",
+    "setup.done.heading": "Your site is ready!",
+    "setup.done.text": "That was all of the basic configuration that you needed. Now it's just a matter of adding entries and giving people access.",
+    "setup.done.button": "Visit the dashboard"
 }

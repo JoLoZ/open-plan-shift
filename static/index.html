@@ -14,35 +14,126 @@
     </head>
     <body>
         <div id="wrapper">
-            <div class="page flex-center vh-100 container" id="login">
-                <div class="row w-100">
-                    <div class="col-lg-4"></div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h1
-                                    class="text-center"
-                                    data-txt="login.title"
-                                ></h1>
-                                <form id="login-form">
-                                    <input
-                                        type="password"
-                                        class="form-control"
-                                        required
-                                    />
-                                    <div class="text-danger"></div>
-                                    <button
-                                        type="submit"
-                                        class="btn btn-primary w-100 mt-3 mb-0"
-                                        data-txt="login.submit"
-                                    ></button>
-                                </form>
+            <div class="page flex-center vh-100" id="login">
+                <div class="container">
+                    <div class="row w-100">
+                        <div class="col-lg-4"></div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h1
+                                        class="text-center"
+                                        data-txt="login.title"
+                                    ></h1>
+                                    <form id="login-form">
+                                        <input
+                                            type="password"
+                                            class="form-control"
+                                            required
+                                        />
+                                        <div class="text-danger"></div>
+                                        <button
+                                            type="submit"
+                                            class="btn btn-primary w-100 mt-3 mb-0"
+                                            data-txt="login.submit"
+                                        ></button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
+                        <div class="col-lg-4"></div>
                     </div>
-                    <div class="col-lg-4"></div>
                 </div>
             </div>
+            <div class="page flex-center vh-100" id="setup">
+                <div class="container">
+                    <div class="row w-100">
+                        <div class="col-lg-3"></div>
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div
+                                    id="language"
+                                    class="card-body text-center"
+                                    style="display: block"
+                                >
+                                    <button
+                                        class="btn btn-link icon-lg text-decoration-none"
+                                        onclick="setLanguage('de'); setup_step('theme')"
+                                    >
+                                        🇩🇪
+                                    </button>
+                                    <button
+                                        class="btn btn-link icon-lg text-decoration-none"
+                                        onclick="setLanguage('en'); setup_step('theme')"
+                                    >
+                                        🇬🇧
+                                    </button>
+                                </div>
+                                <div id="theme" class="card-body text-center">
+                                    <h1 data-txt="setup.theme.heading"></h1>
+                                    <select
+                                        id="setup-theme-select"
+                                        class="form-select"
+                                        onchange="loadTheme(this.options[this.selectedIndex].text.toLowerCase())"
+                                    >
+                                        <option value="cerulean">
+                                            Cerulean
+                                        </option>
+                                        <option value="cosmo">Cosmo</option>
+                                        <option value="cyborg">Cyborg</option>
+                                        <option value="darkly">Darkly</option>
+                                        <option value="flatly">Flatly</option>
+                                        <option value="journal">Journal</option>
+                                        <option value="litera">Litera</option>
+                                        <option value="lumen" selected>
+                                            Lumen
+                                        </option>
+                                        <option value="lux">Lux</option>
+                                        <option value="materia">Materia</option>
+                                        <option value="minty">Minty</option>
+                                        <option value="morph">Morph</option>
+                                        <option value="pulse">Pulse</option>
+                                        <option value="quartz">Quartz</option>
+                                        <option value="sandstone">
+                                            Sandstone
+                                        </option>
+                                        <option value="simplex">Simplex</option>
+                                        <option value="sketchy">Sketchy</option>
+                                        <option value="slate">Slate</option>
+                                        <option value="solar">Solar</option>
+                                        <option value="spacelab">
+                                            Spacelab
+                                        </option>
+                                        <option value="superhero">
+                                            Superhero
+                                        </option>
+                                        <option value="united">United</option>
+                                        <option value="vapor">Vapor</option>
+                                        <option value="yeti">Yeti</option>
+                                        <option value="zephyr">Zephyr</option>
+                                    </select>
+                                    <button
+                                        class="btn btn-primary mt-3"
+                                        data-txt="generic.next"
+                                        onclick="let temp = this.parentElement.querySelector('select'); set('theme', temp.options[temp.selectedIndex].text.toLowerCase()); setup_step('done')"
+                                    ></button>
+                                </div>
+                                <div id="done" class="card-body text-center">
+                                    <h1 data-txt="setup.done.heading"></h1>
+                                    <div data-txt="setup.done.text"></div>
+                                    <a
+                                        href="?"
+                                        class="btn btn-primary mt-3"
+                                        data-txt="setup.done.button"
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="page" id="home">WIP home</div>
         </div>
 
         <script src="./assets/js/splash.js"></script>

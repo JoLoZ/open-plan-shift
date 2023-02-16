@@ -9,8 +9,9 @@ async function login(e) {
     button.innerText = _("login.loading");
 
     token = pass.value;
+    let prem;
     try {
-        await api("permissions");
+        perm = await api("permissions");
     } catch (e) {
         console.warn("Login error", e);
         token = undefined;
@@ -26,5 +27,11 @@ async function login(e) {
         }
         return;
     }
-    //TODO Handle login
+    //Login successful
+    sessionStorage.setItem("token", token);
+    if (perm.includes("superadmin") && config.language == undefined) {
+        page("setup");
+    } else {
+        page("home");
+    }
 }

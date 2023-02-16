@@ -16,7 +16,7 @@ router.use((req, res, next) => {
 });
 
 router.get("/config/language", (req, res) => {
-    config("language", req.query.lang);
+    config("language", req.query.language);
     res.json(config());
 });
 router.get("/config/theme", (req, res) => {

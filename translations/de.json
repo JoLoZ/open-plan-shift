@@ -3,9 +3,19 @@
     "init.load.nav": "Lade Seite...",
     "init.load.login": "Lade Login...",
     "init.load.theme": "Lade Aussehen...",
+    "init.login": "Melde an...",
 
     "login.title": "Anmeldung",
     "login.submit": "Anmelden",
     "login.loading": "Anmeldung läuft...",
-    "login.error.token": "Ungültiger Zugriffscode!"
+    "login.error.token": "Ungültiger Zugriffscode!",
+
+    "generic.next": "Weiter",
+    "generic.back": "Zurück",
+    "generic.submit": "OK",
+
+    "setup.theme.heading": "Seitendesign",
+    "setup.done.heading": "Die Seite ist bereit!",
+    "setup.done.text": "Dies war alles wichtige was eingestellt werden musste. Jetzt müssen nur noch Einträge geschrieben werden und für die Besucher Zurgriffcodes generiert werden.",
+    "setup.done.button": "Dashboard aufrufen"
 }

@@ -4,6 +4,7 @@ const crypto = require("crypto");
 module.exports.config = (key = undefined, value = undefined) => {
     let data = JSON.parse(fs.readFileSync("config.json"));
     if (value != undefined) {
+        console.log("Setting config", key, "to", value);
         data[key] = value;
         fs.writeFileSync("config.json", JSON.stringify(data));
         return value;

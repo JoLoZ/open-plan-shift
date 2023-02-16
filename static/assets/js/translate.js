@@ -14,3 +14,9 @@ function translatePage() {
         el.innerText = _(el.dataset.txt);
     }
 }
+
+async function setLanguage(code) {
+    await set("language", code);
+    await translationInit();
+    translatePage();
+}
