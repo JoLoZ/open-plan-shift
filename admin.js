@@ -64,4 +64,49 @@ router.get("/secret/remove", (req, res) => {
     res.json(true);
 });
 
+router.get("/plan/:day/add", (req, res) => {
+    let data = getExistingPlanData(req.params.day);
+    //Add new data
+    data.push({
+        group: req.query.group || "",
+        lesson: req.query.lesson || "",
+        subject: req.query.subject || "",
+        teacher: req.query.teacher || "",
+        room: req.query.room || "",
+        note: req.query.note || "",
+    });
+
+    fs.writeFileSync(
+        `plan/${req.params.day}/${Date.now()}.json`,
+        JSON.stringify(data)
+    );
+
+    res.json(data);
+});
+router.get("/plan/:day/remove/:number", (req, res) => {
+    let data = getExistingPlanData(req.params.day);
+    //Remove entry
+    data.splice(req.params.number, 1);
+
+    fs.writeFileSync(
+        `plan/${req.params.day}/${Date.now()}.json`,
+        JSON.stringify(data)
+    );
+
+    res.json(data);
+});
+
+function getExistingPlanData(day) {
+    let data = [];
+    if (!fs.existsSync(`plan/${day}`)) {
+        fs.mkdirSync(`plan/${day}`);
+    } else {
+        let name = fs.readdirSync(`plan/${day}`).sort().reverse()[0];
+        if (name != undefined) {
+            data = JSON.parse(fs.readFileSync(`plan/${day}/${name}`));
+        }
+    }
+    return data;
+}
+
 module.exports = router;

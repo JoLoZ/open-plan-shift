@@ -24,5 +24,6 @@
     "plan.header.subject": "Subject",
     "plan.header.teacher": "Teacher",
     "plan.header.room": "Room",
-    "plan.header.note": "Note"
+    "plan.header.note": "Note",
+    "plan.empty": "There are no changes scheduled."
 }

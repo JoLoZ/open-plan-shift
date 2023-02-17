@@ -12,9 +12,20 @@ async function plan_generate(dayOffset = 0) {
     let day = Math.floor(now / 8.64e7);
     day += dayOffset;
 
-    let data = await api(`plan/${day}`);
-
     let container = document.querySelector(".page#home tbody");
+    container.innerHTML = `<tr><td class="text-center w-100" colspan="6"><span class="spinner-border text-primary"></span></td></tr>`;
+
+    let data;
+    try {
+        data = await api(`plan/${day}`);
+    } catch (e) {
+        if (e.code == 404) {
+            document.querySelector(".page#home tbody td").innerText =
+                _("plan.empty");
+            return;
+        }
+        throw e;
+    }
 
     container.innerHTML = "";
 

@@ -24,5 +24,6 @@
     "plan.header.subject": "Fach",
     "plan.header.teacher": "Lehrer",
     "plan.header.room": "Raum",
-    "plan.header.note": "Bemerkung"
+    "plan.header.note": "Bemerkung",
+    "plan.empty": "Es gibt keine Änderungen."
 }
