@@ -28,7 +28,7 @@ async function login(e) {
         return;
     }
     //Login successful
-    sessionStorage.setItem("token", token);
+    localStorage.setItem("token", token);
     if (perm.includes("superadmin") && config.language == undefined) {
         page("setup");
     } else {

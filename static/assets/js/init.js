@@ -27,10 +27,14 @@ async function init() {
     await splash.status(_("init.load.theme"));
     await loadScript("/assets/js/theme.js");
 
-    if (sessionStorage.getItem("token") != undefined) {
+    if(urlParams.get("token")){
+        localStorage.setItem("token")
+    }
+
+    if (localStorage.getItem("token") != undefined) {
         await splash.status(_("init.login"));
         document.querySelector("#login-form input").value =
-            sessionStorage.getItem("token");
+            localStorage.getItem("token");
         await login({ preventDefault: () => {} });
     }
 
