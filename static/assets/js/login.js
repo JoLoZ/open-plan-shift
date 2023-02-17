@@ -34,4 +34,16 @@ async function login(e) {
     } else {
         page("home");
     }
+    renderPermElements();
+    plan_generate(0);
+}
+
+function renderPermElements() {
+    document.querySelectorAll("[data-perm]").forEach((node) => {
+        if (perm.includes(node.dataset.perm)) {
+            node.style.display = "";
+        } else {
+            node.style.display = "none";
+        }
+    });
 }

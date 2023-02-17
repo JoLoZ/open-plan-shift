@@ -13,6 +13,10 @@
     "generic.next": "Next",
     "generic.back": "Back",
     "generic.submit": "OK",
+    "generic.new": "New",
+    "generic.delete": "Delete",
+    "generic.save": "Save",
+    "generic.cancel": "Cancel",
 
     "setup.theme.heading": "Sitedesign",
     "setup.done.heading": "Your site is ready!",
@@ -25,5 +29,7 @@
     "plan.header.teacher": "Teacher",
     "plan.header.room": "Room",
     "plan.header.note": "Note",
-    "plan.empty": "There are no changes scheduled."
+    "plan.header.day": "Day",
+    "plan.empty": "There are no changes scheduled.",
+    "plan.add.heading": "Add change"
 }

@@ -138,7 +138,16 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <td data-txt="plan.header.group"></td>
+                                <td>
+                                    <button
+                                        disabled="disabled"
+                                        class="btn btn-outline-danger btn-sm py-0 me-3"
+                                        data-txt="generic.delete"
+                                        disabled
+                                        data-perm="admin"
+                                    ></button>
+                                    <span data-txt="plan.header.group"></span>
+                                </td>
                                 <td data-txt="plan.header.lesson"></td>
                                 <td data-txt="plan.header.subject"></td>
                                 <td data-txt="plan.header.teacher"></td>
@@ -156,6 +165,124 @@
                             </tr>
                         </tbody>
                     </table>
+                    <div class="mt-5">
+                        <button
+                            class="btn btn-primary"
+                            data-txt="generic.new"
+                            data-perm="admin"
+                            onclick="document.querySelector('#plan-add').classList.remove('d-none')"
+                        ></button>
+                    </div>
+                    <div class="card d-none mt-3" id="plan-add">
+                        <div class="card-body">
+                            <h1 data-txt="plan.add.heading"></h1>
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-4 mb-3">
+                                        <label
+                                            for="plan-add-day"
+                                            class="form-label"
+                                            data-txt="plan.header.day"
+                                        ></label>
+                                        <input
+                                            type="date"
+                                            class="form-control"
+                                            id="plan-add-day"
+                                            required
+                                        />
+                                    </div>
+                                    <div class="col-lg-4 mb-3">
+                                        <label
+                                            for="plan-add-group"
+                                            class="form-label"
+                                            data-txt="plan.header.group"
+                                        ></label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="plan-add-group"
+                                            required
+                                        />
+                                    </div>
+                                    <div class="col-lg-4 mb-3">
+                                        <label
+                                            for="plan-add-lesson"
+                                            class="form-label"
+                                            data-txt="plan.header.lesson"
+                                        ></label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="plan-add-lesson"
+                                            required
+                                        />
+                                    </div>
+                                    <div class="col-lg-4 mb-3">
+                                        <label
+                                            for="plan-add-subject"
+                                            class="form-label"
+                                            data-txt="plan.header.subject"
+                                        ></label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="plan-add-subject"
+                                            required
+                                        />
+                                    </div>
+                                    <div class="col-lg-4 mb-3">
+                                        <label
+                                            for="plan-add-room"
+                                            class="form-label"
+                                            data-txt="plan.header.room"
+                                        ></label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="plan-add-room"
+                                        />
+                                    </div>
+                                    <div class="col-lg-4 mb-3">
+                                        <label
+                                            for="plan-add-teacher"
+                                            class="form-label"
+                                            data-txt="plan.header.teacher"
+                                        ></label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="plan-add-teacher"
+                                        />
+                                    </div>
+                                </div>
+
+                                <label
+                                    for="plan-add-note"
+                                    class="form-label"
+                                    data-txt="plan.header.note"
+                                ></label>
+                                <textarea
+                                    type="text"
+                                    class="form-control mb-3"
+                                    id="plan-add-note"
+                                ></textarea>
+
+                                <div class="text-align-end">
+                                    <button
+                                        class="btn btn-danger"
+                                        type="reset"
+                                        onclick="document.querySelector('#plan-add').classList.add('d-none')"
+                                        data-txt="generic.cancel"
+                                    ></button>
+                                    <button
+                                        type="submit"
+                                        class="btn btn-primary"
+                                        data-txt="generic.save"
+                                    ></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
