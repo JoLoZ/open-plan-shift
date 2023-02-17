@@ -27,8 +27,8 @@ async function init() {
     await splash.status(_("init.load.theme"));
     await loadScript("/assets/js/theme.js");
 
-    if(urlParams.get("token")){
-        localStorage.setItem("token")
+    if (urlParams.get("token")) {
+        localStorage.setItem("token", urlParams.get("token"));
     }
 
     if (localStorage.getItem("token") != undefined) {
