@@ -73,10 +73,10 @@ class fancySplash {
     async status(text) {
         this.text.classList.add("updated");
         this.text.style.opacity = 0;
-        await new Promise((res) => setTimeout(res, 250));
+        await new Promise((res) => setTimeout(res, 100));
         this.text.innerText = text;
         this.text.style.opacity = 1;
-        await new Promise((res) => setTimeout(res, 250));
+        await new Promise((res) => setTimeout(res, 100));
     }
 
     async disable() {
