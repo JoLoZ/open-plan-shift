@@ -7,10 +7,15 @@ function setup_step(id) {
 }
 
 async function plan_generate(day = 0, dayIsAbsolute = false) {
+    let now = new Date();
     if (!dayIsAbsolute) {
-        let now = new Date();
         day = Math.floor(now / 8.64e7) + day;
     }
+
+    let today = new Date().toISOString().substring(0, 10);
+    let dateEl = document.querySelector("#plan-add-day");
+    dateEl.min = today;
+    dateEl.value = now.toISOString().substring(0, 10);
 
     let container = document.querySelector(".page#home tbody");
     container.innerHTML = `<tr><td class="text-center w-100" colspan="6"><span class="spinner-border text-primary"></span></td></tr>`;
@@ -77,11 +82,6 @@ async function plan_generate(day = 0, dayIsAbsolute = false) {
 
         container.append(row);
     }
-
-    let today = new Date().toISOString().substring(0, 10);
-    let dateEl = document.querySelector("#plan-add-day");
-    dateEl.min = today;
-    dateEl.value = today;
 }
 async function plan_add() {
     let day = new Date(document.querySelector("#plan-add-day").valueAsNumber);
