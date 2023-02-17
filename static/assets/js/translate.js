@@ -11,7 +11,7 @@ function _(key) {
 function translatePage() {
     var els = document.querySelectorAll("[data-txt]");
     for (const el of els) {
-        el.innerText = _(el.dataset.txt);
+        el.innerText = _(el.dataset.txt) || el.dataset.txt;
     }
 }
 

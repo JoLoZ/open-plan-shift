@@ -17,5 +17,12 @@
     "setup.theme.heading": "Seitendesign",
     "setup.done.heading": "Die Seite ist bereit!",
     "setup.done.text": "Dies war alles wichtige was eingestellt werden musste. Jetzt müssen nur noch Einträge geschrieben werden und für die Besucher Zurgriffcodes generiert werden.",
-    "setup.done.button": "Dashboard aufrufen"
+    "setup.done.button": "Dashboard aufrufen",
+
+    "plan.header.group": "Klasse",
+    "plan.header.lesson": "Stunde",
+    "plan.header.subject": "Fach",
+    "plan.header.teacher": "Lehrer",
+    "plan.header.room": "Raum",
+    "plan.header.note": "Bemerkung"
 }

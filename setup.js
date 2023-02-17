@@ -24,4 +24,7 @@ if (!fs.existsSync("secrets")) {
 if (!fs.existsSync("config.json")) {
     fs.writeFileSync("config.json", "{}");
 }
+if (!fs.existsSync("plans")) {
+    fs.mkdirSync("plans");
+}
 console.log("Startup checks complete!");

@@ -28,4 +28,23 @@ router.get("/permissions", (req, res) => {
     res.json(info.permissions);
 });
 
+router.get("/plan/:day", (req, res) => {
+    if (!fs.existsSync(`plan/${req.params.day}`)) {
+        res.status(404).json([]);
+        return;
+    }
+    let data = fs.readdirSync(`plan/${req.params.day}`);
+    if (data.length == 0) {
+        res.status(404).json([]);
+        return;
+    }
+    data = data.sort().reverse();
+
+    res.json(
+        JSON.parse(
+            fs.readFileSync(`plan/${req.params.day}/${data[0]}`, "utf-8")
+        )
+    );
+});
+
 module.exports = router;

@@ -17,5 +17,12 @@
     "setup.theme.heading": "Sitedesign",
     "setup.done.heading": "Your site is ready!",
     "setup.done.text": "That was all of the basic configuration that you needed. Now it's just a matter of adding entries and giving people access.",
-    "setup.done.button": "Visit the dashboard"
+    "setup.done.button": "Visit the dashboard",
+
+    "plan.header.group": "Group",
+    "plan.header.lesson": "Lesson",
+    "plan.header.subject": "Subject",
+    "plan.header.teacher": "Teacher",
+    "plan.header.room": "Room",
+    "plan.header.note": "Note"
 }
