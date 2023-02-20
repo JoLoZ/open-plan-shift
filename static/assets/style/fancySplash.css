@@ -47,6 +47,7 @@
 .fancySplash .logo {
     transition: 0.5s ease-out;
     height: 1000vw;
+    pointer-events: none;
 }
 .fancySplash.enabled .logo {
     height: 25vw;
