@@ -22,6 +22,7 @@
     "setup.done.heading": "Your site is ready!",
     "setup.done.text": "That was all of the basic configuration that you needed. Now it's just a matter of adding entries and giving people access.",
     "setup.done.button": "Visit the dashboard",
+    "setup.restart": "Run setup again",
 
     "plan.header.group": "Group",
     "plan.header.lesson": "Lesson",
@@ -30,9 +31,14 @@
     "plan.header.room": "Room",
     "plan.header.note": "Note",
     "plan.header.day": "Day",
+    "plan.header.time": "Timeframe",
+    "plan.header.location": "Location",
     "plan.empty": "There are no changes scheduled.",
     "plan.add.heading": "Add change",
     "plan.today": "Today",
+    "plan.new.lesson": "New Lesson Change",
+    "plan.new.supervisor": "New Supervisor Change",
+    "plan.default.supervisor": "Supervision",
 
     "update.available": "A new version is available.",
     "update.run": "Update now",

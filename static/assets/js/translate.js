@@ -5,7 +5,7 @@ async function translationInit() {
 }
 
 function _(key) {
-    return translationStrings[key];
+    return translationStrings[key] || key;
 }
 
 function translatePage() {

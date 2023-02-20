@@ -22,6 +22,7 @@
     "setup.done.heading": "Die Seite ist bereit!",
     "setup.done.text": "Dies war alles wichtige was eingestellt werden musste. Jetzt müssen nur noch Einträge geschrieben werden und für die Besucher Zurgriffcodes generiert werden.",
     "setup.done.button": "Dashboard aufrufen",
+    "setup.restart": "Setup erneut ausführen",
 
     "plan.header.group": "Klasse",
     "plan.header.lesson": "Stunde",
@@ -30,9 +31,14 @@
     "plan.header.room": "Raum",
     "plan.header.note": "Bemerkung",
     "plan.header.day": "Tag",
+    "plan.header.time": "Zeitraum",
+    "plan.header.location": "Ort",
     "plan.empty": "Es gibt keine Änderungen.",
     "plan.add.heading": "Änderung hinzufügen",
     "plan.today": "Heute",
+    "plan.new.lesson": "Neue Stundenplan Änderung",
+    "plan.new.supervisor": "Neue Aufsichtsänderung",
+    "plan.default.supervisor": "Aufsicht",
 
     "update.available": "Es steht eine neue Version zur Verfügung.",
     "update.run": "Jetzt aktuallisieren",

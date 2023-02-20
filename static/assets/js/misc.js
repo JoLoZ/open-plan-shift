@@ -121,7 +121,7 @@ async function plan_add() {
         subject: document.querySelector("#plan-add-subject").value,
         teacher: document.querySelector("#plan-add-teacher").value,
         room: document.querySelector("#plan-add-room").value,
-        note: document.querySelector("#plan-add-note").innerText,
+        note: document.querySelector("#plan-add-note").value,
     };
     await api(`admin/plan/${day}/add`, data);
     await plan_generate(day, true);
@@ -139,4 +139,42 @@ document.querySelector("#plan-add form").addEventListener("submit", (e) => {
 function plan_move(by) {
     let mod = plan_offsetCurrent + by;
     plan_generate(mod, false, by < 0);
+}
+
+function newLessonChange() {
+    newChangeShared();
+    document
+        .querySelector("#plan-add-group")
+        .parentElement.classList.remove("d-none");
+    document.querySelector("[for='plan-add-lesson']").innerText =
+        _("plan.header.lesson");
+    document
+        .querySelector("#plan-add-subject")
+        .parentElement.classList.remove("d-none");
+    document.querySelector("[for='plan-add-room']").innerText =
+        _("plan.header.room");
+}
+function newSupervisorChange() {
+    newChangeShared();
+    document
+        .querySelector("#plan-add-group")
+        .parentElement.classList.add("d-none");
+    document.querySelector("[for='plan-add-lesson']").innerText =
+        _("plan.header.time");
+    document
+        .querySelector("#plan-add-subject")
+        .parentElement.classList.add("d-none");
+    document.querySelector("[for='plan-add-room']").innerText = _(
+        "plan.header.location"
+    );
+    document.querySelector("#plan-add-subject").value = _(
+        "plan.default.supervisor"
+    );
+}
+function newChangeShared() {
+    document.querySelector("#plan-add").classList.remove("d-none");
+    document.querySelector("#plan-add form").reset();
+    document.querySelector("#plan-add-day").value = new Date()
+        .toISOString()
+        .substring(0, 10);
 }

@@ -181,9 +181,21 @@
                     <div class="mt-5">
                         <button
                             class="btn btn-primary"
-                            data-txt="generic.new"
+                            data-txt="plan.new.lesson"
                             data-perm="admin"
-                            onclick="document.querySelector('#plan-add').classList.remove('d-none')"
+                            onclick="newLessonChange()"
+                        ></button>
+                        <button
+                            class="btn btn-primary"
+                            data-txt="plan.new.supervisor"
+                            data-perm="admin"
+                            onclick="newSupervisorChange()"
+                        ></button>
+
+                        <button
+                            class="btn btn-secondary"
+                            data-txt="setup.restart"
+                            onclick="page('setup')"
                         ></button>
                     </div>
                     <div class="card d-none mt-3" id="plan-add">
@@ -214,7 +226,6 @@
                                             type="text"
                                             class="form-control"
                                             id="plan-add-group"
-                                            required
                                         />
                                     </div>
                                     <div class="col-lg-4 mb-3">
@@ -240,7 +251,6 @@
                                             type="text"
                                             class="form-control"
                                             id="plan-add-subject"
-                                            required
                                         />
                                     </div>
                                     <div class="col-lg-4 mb-3">
