@@ -17,6 +17,7 @@
     "generic.delete": "Löschen",
     "generic.save": "Speichern",
     "generic.cancel": "Abbrechen",
+    "generic.logout": "Abmelden",
 
     "setup.theme.heading": "Seitendesign",
     "setup.title.heading": "Seitenname",

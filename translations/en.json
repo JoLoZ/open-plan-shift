@@ -17,6 +17,7 @@
     "generic.delete": "Delete",
     "generic.save": "Save",
     "generic.cancel": "Cancel",
+    "generic.logout": "Log out",
 
     "setup.theme.heading": "Sitedesign",
     "setup.title.heading": "Sitetitle",
