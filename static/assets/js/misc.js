@@ -178,3 +178,51 @@ function newChangeShared() {
         .toISOString()
         .substring(0, 10);
 }
+
+async function keys_list() {
+    page("keys");
+    let secrets = await api("admin/secrets/list");
+
+    let container = document.querySelector("#key-list tbody");
+    container.innerHTML = "";
+
+    for (const secret of secrets) {
+        let row = document.createElement("tr");
+
+        let name = document.createElement("td");
+        name.innerText = secret.name || "-";
+        row.append(name);
+
+        let permissions = document.createElement("td");
+        permissions.innerText = secret.permissions.join(", ");
+        row.append(permissions);
+
+        let actions = document.createElement("td");
+        let btn_delete = document.createElement("button");
+        btn_delete.addEventListener("click", async () => {
+            await api("admin/secret/remove", { key: secret.hash });
+            keys_list();
+        });
+        btn_delete.classList.add("btn", "btn-danger", "btn-sm", "py-0", "me-3");
+        btn_delete.innerText = _("generic.delete");
+        if (secret.permissions.includes("superadmin")) {
+            btn_delete.disabled = true;
+        }
+        actions.append(btn_delete);
+        row.append(actions);
+
+        container.append(row);
+    }
+}
+
+document.querySelector("#key-add-form").addEventListener("submit", key_add);
+async function key_add(e) {
+    e.preventDefault();
+    await api("admin/secret/add", {
+        key: document.querySelector("#key-add-secret").value,
+        name: document.querySelector("#key-add-name").value,
+        permissions: document.querySelector("#key-add-permissions").value,
+    });
+    document.querySelector("#key-add-form").reset();
+    keys_list();
+}

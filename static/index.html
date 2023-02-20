@@ -195,7 +195,14 @@
                         <button
                             class="btn btn-secondary"
                             data-txt="setup.restart"
+                            data-perm="admin"
                             onclick="page('setup')"
+                        ></button>
+                        <button
+                            class="btn btn-secondary"
+                            data-txt="key.open"
+                            data-perm="admin"
+                            onclick="keys_list()"
                         ></button>
                     </div>
                     <div class="card d-none mt-3" id="plan-add">
@@ -303,6 +310,84 @@
                                         data-txt="generic.save"
                                     ></button>
                                 </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page" id="keys">
+                <div class="container">
+                    <button
+                        class="btn btn-secondary mt-2"
+                        onclick="page('home')"
+                        data-txt="generic.back"
+                    ></button>
+                    <table class="table" id="key-list">
+                        <thead>
+                            <tr>
+                                <td data-txt="key.header.name"></td>
+                                <td data-txt="key.header.permissions"></td>
+                                <td data-txt="key.header.action"></td>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 data-txt="key.add"></h1>
+                            <form id="key-add-form">
+                                <div class="row">
+                                    <div class="col-lg-4 mb-3">
+                                        <label
+                                            for="key-add-secret"
+                                            class="form-label"
+                                            data-txt="key.header.secret"
+                                        ></label>
+                                        <input
+                                            type="password"
+                                            class="form-control"
+                                            id="key-add-secret"
+                                            required
+                                        />
+                                    </div>
+                                    <div class="col-lg-4 mb-3">
+                                        <label
+                                            for="key-add-name"
+                                            class="form-label"
+                                            data-txt="key.header.name"
+                                        ></label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="key-add-name"
+                                            required
+                                        />
+                                    </div>
+                                    <div class="col-lg-4 mb-3">
+                                        <label
+                                            for="key-add-permissions"
+                                            class="form-label"
+                                            data-txt="key.header.permissions"
+                                        ></label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            id="key-add-permissions"
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                                <button
+                                    type="reset"
+                                    class="btn btn-danger"
+                                    data-txt="generic.cancel"
+                                ></button>
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary"
+                                    data-txt="generic.save"
+                                ></button>
                             </form>
                         </div>
                     </div>

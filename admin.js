@@ -57,12 +57,30 @@ router.get("/secret/add", (req, res) => {
     res.json(user);
 });
 router.get("/secret/remove", (req, res) => {
-    if (!fs.existsSync(`secrets/${hash(req.query.key)}.json`)) {
-        res.json(false);
+    if (fs.existsSync(`secrets/${hash(req.query.key)}.json`)) {
+        fs.rmSync(`secrets/${hash(req.query.key)}.json`);
+        res.json(true);
         return;
     }
-    fs.rmSync(`secrets/${hash(req.query.key)}.json`);
-    res.json(true);
+    if (fs.existsSync(`secrets/${req.query.key}.json`)) {
+        fs.rmSync(`secrets/${req.query.key}.json`);
+        res.json(true);
+        return;
+    }
+    res.json(false);
+});
+router.get("/secrets/list", (req, res) => {
+    let secrets = [];
+    let files = fs.readdirSync("secrets");
+
+    for (const file of files) {
+        secrets.push({
+            hash: file.slice(0, -5),
+            ...JSON.parse(fs.readFileSync(`secrets/${file}`, "utf-8")),
+        });
+    }
+
+    res.json(secrets);
 });
 
 router.get("/plan/:day/add", (req, res) => {

@@ -42,5 +42,12 @@
 
     "update.available": "Es steht eine neue Version zur Verfügung.",
     "update.run": "Jetzt aktuallisieren",
-    "update.running": "Aktuallisiere..."
+    "update.running": "Aktuallisiere...",
+
+    "key.add": "Schlüssel hinzufügen",
+    "key.header.name": "Name",
+    "key.header.permissions": "Berechtigungen",
+    "key.header.action": "Aktionen",
+    "key.header.secret": "Schlüssel",
+    "key.open": "Schlüssel bearbeiten"
 }

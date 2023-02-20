@@ -42,5 +42,12 @@
 
     "update.available": "A new version is available.",
     "update.run": "Update now",
-    "update.running": "Updating..."
+    "update.running": "Updating...",
+
+    "key.add": "Add key",
+    "key.header.name": "Name",
+    "key.header.permissions": "Permissions",
+    "key.header.action": "Actions",
+    "key.header.secret": "Key",
+    "key.open": "Edit keys"
 }
