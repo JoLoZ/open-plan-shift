@@ -43,10 +43,6 @@ async function init() {
     }
 
     await splash.disable();
-
-    if (perm.includes("admin")) {
-        await loadScript("/assets/js/updater.js");
-    }
 }
 
 init();

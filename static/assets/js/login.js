@@ -34,6 +34,11 @@ async function login(e) {
     } else {
         page("home");
     }
+
+    if (perm.includes("admin")) {
+        await loadScript("/assets/js/updater.js");
+    }
+
     renderPermElements();
     plan_generate(0);
 }
