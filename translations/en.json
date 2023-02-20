@@ -32,6 +32,7 @@
     "plan.header.day": "Day",
     "plan.empty": "There are no changes scheduled.",
     "plan.add.heading": "Add change",
+    "plan.today": "Today",
 
     "update.available": "A new version is available.",
     "update.run": "Update now",

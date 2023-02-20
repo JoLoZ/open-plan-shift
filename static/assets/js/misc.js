@@ -6,9 +6,15 @@ function setup_step(id) {
     document.querySelector("#setup .card-body#" + id).style.display = "block";
 }
 
-async function plan_generate(day = 0, dayIsAbsolute = false) {
+let plan_offsetCurrent;
+async function plan_generate(
+    day = 0,
+    dayIsAbsolute = false,
+    reverseWeekendHandling = false
+) {
     let now = new Date();
     if (!dayIsAbsolute) {
+        plan_offsetCurrent = day;
         day = Math.floor(now / 8.64e7) + day;
     }
 
@@ -29,7 +35,13 @@ async function plan_generate(day = 0, dayIsAbsolute = false) {
 
     if (date.getDay() > 5 || date.getDay() == 0) {
         console.log("Weekend!");
-        plan_generate(day + 1, true);
+        if (reverseWeekendHandling) {
+            plan_offsetCurrent--;
+            plan_generate(day - 1, true, true);
+        } else {
+            plan_offsetCurrent++;
+            plan_generate(day + 1, true, false);
+        }
         return;
     }
 
@@ -123,3 +135,8 @@ document.querySelector("#plan-add form").addEventListener("submit", (e) => {
     e.preventDefault();
     plan_add();
 });
+
+function plan_move(by) {
+    let mod = plan_offsetCurrent + by;
+    plan_generate(mod, false, by < 0);
+}

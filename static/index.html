@@ -136,6 +136,18 @@
             <div class="page" id="home">
                 <div class="container">
                     <h1 class="date"></h1>
+                    <button class="btn btn-secondary" onclick="plan_move(-1)">
+                        ⬅
+                    </button>
+                    <button
+                        class="btn btn-primary"
+                        onclick="plan_generate(0)"
+                        data-txt="plan.today"
+                    ></button>
+                    <button class="btn btn-secondary" onclick="plan_move(1)">
+                        ➡
+                    </button>
+
                     <table class="table">
                         <thead>
                             <tr>
