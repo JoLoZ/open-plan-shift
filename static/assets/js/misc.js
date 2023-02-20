@@ -27,7 +27,6 @@ async function plan_generate(day = 0, dayIsAbsolute = false) {
             day: "numeric",
         });
 
-    console.log(date.getDay());
     if (date.getDay() > 5 || date.getDay() == 0) {
         console.log("Weekend!");
         plan_generate(day + 1, true);
