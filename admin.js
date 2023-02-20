@@ -41,6 +41,7 @@ router.get("/update", (req, res) => {
     console.log("Running NPM install");
     exec("npm i");
     console.log("Done");
+    res.json(true);
     process.exit();
 });
 

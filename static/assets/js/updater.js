@@ -28,7 +28,9 @@ async function checkUpdate() {
                     await api("admin/version");
                 } catch {
                     setTimeout(retryConnection, 200);
+                    return;
                 }
+                window.location.reload();
             }
             retryConnection();
         });
