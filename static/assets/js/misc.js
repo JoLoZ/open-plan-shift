@@ -27,6 +27,13 @@ async function plan_generate(day = 0, dayIsAbsolute = false) {
             day: "numeric",
         });
 
+    console.log(date.getDay());
+    if (date.getDay() > 5 || date.getDay() == 0) {
+        console.log("Weekend!");
+        plan_generate(day + 1, true);
+        return;
+    }
+
     let container = document.querySelector(".page#home tbody");
     container.innerHTML = `<tr><td class="text-center w-100" colspan="6"><span class="spinner-border text-primary"></span></td></tr>`;
 
