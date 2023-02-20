@@ -15,6 +15,10 @@ async function checkUpdate() {
         btn.addEventListener("click", async () => {
             btn.disabled = true;
             btn.innerText = _("update.running");
+
+            let splash = new fancySplash("/assets/style/");
+            await splash.init(_("update.running"));
+
             try {
                 await api("admin/update");
             } catch {}
