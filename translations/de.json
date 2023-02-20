@@ -31,5 +31,9 @@
     "plan.header.note": "Bemerkung",
     "plan.header.day": "Tag",
     "plan.empty": "Es gibt keine Änderungen.",
-    "plan.add.heading": "Änderung hinzufügen"
+    "plan.add.heading": "Änderung hinzufügen",
+
+    "update.available": "Es steht eine neue Version zur Verfügung.",
+    "update.run": "Jetzt aktuallisieren",
+    "update.running": "Aktuallisiere..."
 }

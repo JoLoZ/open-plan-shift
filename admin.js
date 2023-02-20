@@ -109,4 +109,8 @@ function getExistingPlanData(day) {
     return data;
 }
 
+router.get("/version", (req, res) => {
+    res.json(fs.readFileSync("version", "utf-8"));
+});
+
 module.exports = router;

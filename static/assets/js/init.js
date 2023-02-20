@@ -32,7 +32,7 @@ async function init() {
     }
 
     if (urlParams.get("displayMode")) {
-        await loadScript("/assets/js/display-mode.js")
+        await loadScript("/assets/js/display-mode.js");
     }
 
     if (localStorage.getItem("token") != undefined) {
@@ -43,6 +43,10 @@ async function init() {
     }
 
     await splash.disable();
+
+    if (perm.includes("admin")) {
+        await loadScript("/assets/js/updater.js");
+    }
 }
 
 init();

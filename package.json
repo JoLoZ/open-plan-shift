@@ -1,6 +1,6 @@
 {
   "name": "substitution-plan",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Server for a substitution plan website and display",
   "main": "index.js",
   "scripts": {
