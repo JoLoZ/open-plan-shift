@@ -26,3 +26,9 @@
     font-size: calc(var(--bs-body-font-size) * 2);
     scrollbar-width: none;
 }
+.displayMode .container {
+    max-width: 100% !important;
+}
+.displayMode h1 {
+    font-size: calc(var(--bs-body-font-size) * 4);
+}

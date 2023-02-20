@@ -17,6 +17,16 @@ async function plan_generate(day = 0, dayIsAbsolute = false) {
     dateEl.min = today;
     dateEl.value = now.toISOString().substring(0, 10);
 
+    //Set date string
+    let date = new Date(Math.floor(day * 8.64e7));
+    document.querySelector("#home.page .date").innerText =
+        date.toLocaleDateString(undefined, {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+        });
+
     let container = document.querySelector(".page#home tbody");
     container.innerHTML = `<tr><td class="text-center w-100" colspan="6"><span class="spinner-border text-primary"></span></td></tr>`;
 
