@@ -19,6 +19,7 @@
     "generic.cancel": "Cancel",
 
     "setup.theme.heading": "Sitedesign",
+    "setup.title.heading": "Sitetitle",
     "setup.done.heading": "Your site is ready!",
     "setup.done.text": "That was all of the basic configuration that you needed. Now it's just a matter of adding entries and giving people access.",
     "setup.done.button": "Visit the dashboard",

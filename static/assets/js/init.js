@@ -4,9 +4,11 @@ let config = {};
 
 async function init() {
     await splash.init("Powered by JoLoZs");
+    document.querySelector("#wrapper").style.opacity = 1;
 
     let req = await fetch("/api/config");
     config = await req.json();
+    document.title = config.title || document.title;
 
     await splash.status("Loading translations...");
     await loadScript("/assets/js/translate.js");

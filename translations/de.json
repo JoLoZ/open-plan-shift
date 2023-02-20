@@ -19,6 +19,7 @@
     "generic.cancel": "Abbrechen",
 
     "setup.theme.heading": "Seitendesign",
+    "setup.title.heading": "Seitenname",
     "setup.done.heading": "Die Seite ist bereit!",
     "setup.done.text": "Dies war alles wichtige was eingestellt werden musste. Jetzt müssen nur noch Einträge geschrieben werden und für die Besucher Zurgriffcodes generiert werden.",
     "setup.done.button": "Dashboard aufrufen",
@@ -39,7 +40,7 @@
     "plan.new.lesson": "Neue Stundenplan Änderung",
     "plan.new.supervisor": "Neue Aufsichtsänderung",
     "plan.default.supervisor": "Aufsicht",
-    "plan.lastUpdate": "Letzte Aktualisierung:",
+    "plan.lastUpdate": "Letzte Änderung:",
 
     "update.available": "Es steht eine neue Version zur Verfügung.",
     "update.run": "Jetzt aktuallisieren",

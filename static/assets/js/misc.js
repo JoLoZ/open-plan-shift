@@ -5,6 +5,16 @@ function setup_step(id) {
 
     document.querySelector("#setup .card-body#" + id).style.display = "block";
 }
+document
+    .querySelector("#setup-title-form")
+    .addEventListener("submit", async (e) => {
+        e.preventDefault();
+        await set(
+            "title",
+            document.querySelector("#setup-title-form input").value
+        );
+        setup_step("done");
+    });
 
 let plan_offsetCurrent;
 async function plan_generate(
@@ -55,6 +65,7 @@ async function plan_generate(
         if (e.code == 404) {
             document.querySelector(".page#home tbody td").innerText =
                 _("plan.empty");
+            document.querySelector("#plan-last-update").innerText = "-";
             return;
         }
         throw e;

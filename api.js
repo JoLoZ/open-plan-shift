@@ -41,7 +41,7 @@ router.get("/plan/:day", (req, res) => {
     data = data.sort().reverse();
 
     res.json({
-        updated: fs.statSync(`plan/${req.params.day}/${data[0]}`).mtimeMs,
+        updated: fs.statSync(`plan/${req.params.day}/${data[0]}`).mtimeMs || "-",
         plan: JSON.parse(
             fs.readFileSync(`plan/${req.params.day}/${data[0]}`, "utf-8")
         ),

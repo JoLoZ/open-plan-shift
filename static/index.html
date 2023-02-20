@@ -13,7 +13,7 @@
         />
     </head>
     <body>
-        <div id="wrapper">
+        <div id="wrapper" style="opacity: 0">
             <div class="page flex-center vh-100" id="login">
                 <div class="container">
                     <div class="row w-100">
@@ -115,8 +115,24 @@
                                     <button
                                         class="btn btn-primary mt-3"
                                         data-txt="generic.next"
-                                        onclick="let temp = this.parentElement.querySelector('select'); set('theme', temp.options[temp.selectedIndex].text.toLowerCase()); setup_step('done')"
+                                        onclick="let temp = this.parentElement.querySelector('select'); set('theme', temp.options[temp.selectedIndex].text.toLowerCase()); setup_step('title')"
                                     ></button>
+                                </div>
+                                <div id="title" class="card-body text-center">
+                                    <h1 data-txt="setup.title.heading"></h1>
+                                    <form id="setup-title-form">
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Open Plan Shift"
+                                            required
+                                        />
+                                        <button
+                                            type="submit"
+                                            class="btn btn-primary mt-3"
+                                            data-txt="generic.next"
+                                        ></button>
+                                    </form>
                                 </div>
                                 <div id="done" class="card-body text-center">
                                     <h1 data-txt="setup.done.heading"></h1>

@@ -23,6 +23,10 @@ router.get("/config/theme", (req, res) => {
     config("theme", req.query.theme);
     res.json(config());
 });
+router.get("/config/title", (req, res) => {
+    config("title", req.query.title);
+    res.json(config());
+});
 
 router.get("/update", (req, res) => {
     closeApp();
