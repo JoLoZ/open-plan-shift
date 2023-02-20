@@ -5,7 +5,7 @@ async function checkUpdate() {
     let latest = await req.text();
     let current = await api("admin/version");
 
-    if (current != latest) {
+    if (parseInt(current) < parseInt(latest)) {
         let notify = document.createElement("div");
         notify.classList.add("alert", "alert-secondary", "mt-3");
 
