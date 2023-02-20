@@ -39,6 +39,7 @@
     "plan.new.lesson": "New Lesson Change",
     "plan.new.supervisor": "New Supervisor Change",
     "plan.default.supervisor": "Supervision",
+    "plan.lastUpdate": "Last updated:",
 
     "update.available": "A new version is available.",
     "update.run": "Update now",

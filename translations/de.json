@@ -39,6 +39,7 @@
     "plan.new.lesson": "Neue Stundenplan Änderung",
     "plan.new.supervisor": "Neue Aufsichtsänderung",
     "plan.default.supervisor": "Aufsicht",
+    "plan.lastUpdate": "Letzte Aktualisierung:",
 
     "update.available": "Es steht eine neue Version zur Verfügung.",
     "update.run": "Jetzt aktuallisieren",

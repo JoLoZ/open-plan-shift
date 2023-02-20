@@ -60,6 +60,14 @@ async function plan_generate(
         throw e;
     }
 
+    let updated = data.updated;
+    document.querySelector("#plan-last-update").innerText =
+        new Date(updated).toLocaleDateString() +
+        " " +
+        new Date(updated).toLocaleTimeString();
+
+    data = data.plan;
+
     if (data.length == 0) {
         document.querySelector(".page#home tbody td").innerText =
             _("plan.empty");
