@@ -22,6 +22,16 @@ async function displayModeLoop() {
             });
             await new Promise((resolve) => setTimeout(resolve, 7000));
         }
+
+        plan_generate(2);
+        await new Promise((resolve) => setTimeout(resolve, 7000));
+        if (home.scrollHeight > window.innerHeight) {
+            home.scrollTo({
+                top: 9999,
+                behavior: "smooth",
+            });
+            await new Promise((resolve) => setTimeout(resolve, 7000));
+        }
     }
 }
 displayModeLoop();
