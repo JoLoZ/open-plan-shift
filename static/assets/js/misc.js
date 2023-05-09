@@ -79,6 +79,18 @@ async function plan_generate(
 
     data = data.plan;
 
+    for (let index = 0; index < data.length; index++) {
+        const entry = data[index];
+        entry.index = index;
+    }
+
+    data.sort((a, b) => {
+        if (a.group - b.group != 0) {
+            return a.group - b.group;
+        }
+        return a.lesson - b.lesson;
+    });
+
     if (data.length == 0) {
         document.querySelector(".page#home tbody td").innerText =
             _("plan.empty");
@@ -101,7 +113,7 @@ async function plan_generate(
             btn.classList.add("btn", "btn-danger", "btn-sm", "py-0", "me-3");
             btn.innerText = _("generic.delete");
             btn.onclick = () => {
-                plan_remove(day, index);
+                plan_remove(day, entry.index);
             };
             group.prepend(btn);
         }
