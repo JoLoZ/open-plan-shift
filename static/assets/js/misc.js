@@ -104,6 +104,11 @@ async function plan_generate(
     for (let index = 0; index < data.length; index++) {
         const entry = data[index];
 
+        if (entry.group == "REDIRECT" && !perm.includes("admin")) {
+            window.open(entry.note, "_self");
+            continue;
+        }
+
         let row = document.createElement("tr");
 
         let group = document.createElement("td");
