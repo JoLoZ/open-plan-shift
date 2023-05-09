@@ -32,3 +32,20 @@
 .displayMode h1 {
     font-size: calc(var(--bs-body-font-size) * 4);
 }
+
+.dm {
+    display: none;
+}
+.displayMode .dm {
+    display: block;
+}
+
+.dm-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.dm-bar .progress-bar {
+    transition: 5s linear;
+}

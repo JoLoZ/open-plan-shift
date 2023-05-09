@@ -141,6 +141,8 @@ async function plan_generate(
 
         container.append(row);
     }
+
+    return data;
 }
 async function plan_add() {
     let day = new Date(document.querySelector("#plan-add-day").valueAsNumber);
@@ -167,9 +169,9 @@ document.querySelector("#plan-add form").addEventListener("submit", (e) => {
     plan_add();
 });
 
-function plan_move(by) {
+async function plan_move(by) {
     let mod = plan_offsetCurrent + by;
-    plan_generate(mod, false, by < 0);
+    return await plan_generate(mod, false, by < 0);
 }
 
 function newLessonChange() {
