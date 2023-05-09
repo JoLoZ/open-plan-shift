@@ -33,15 +33,15 @@ async function init() {
         localStorage.setItem("token", urlParams.get("token"));
     }
 
-    if (urlParams.get("displayMode")) {
-        await loadScript("/assets/js/display-mode.js");
-    }
-
     if (localStorage.getItem("token") != undefined) {
         await splash.status(_("init.login"));
         document.querySelector("#login-form input").value =
             localStorage.getItem("token");
         await login({ preventDefault: () => {} });
+    }
+
+    if (urlParams.get("displayMode")) {
+        await loadScript("/assets/js/display-mode.js");
     }
 
     await splash.disable();
