@@ -7,7 +7,7 @@ async function displayModeLoop() {
     let bar = document.querySelector(".dm-bar .progress-bar");
 
     while (true) {
-        plan_generate(-1, false, true);
+        await plan_generate(-1, false, true);
         let percPerDay = 100 / days;
 
         let perc = 0;
