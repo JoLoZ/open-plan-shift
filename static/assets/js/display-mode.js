@@ -30,7 +30,7 @@ async function displayModeLoop() {
                 perc += percPerMove;
                 bar.style.width = perc + "%";
 
-                await new Promise((resolve) => setTimeout(resolve, 5000));
+                await new Promise((resolve) => setTimeout(resolve, 7000));
             }
         }
     }
