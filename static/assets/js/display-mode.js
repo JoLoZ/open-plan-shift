@@ -7,7 +7,7 @@ async function displayModeLoop() {
     let bar = document.querySelector(".dm-bar .progress-bar");
 
     while (true) {
-        await plan_generate(-1, false, true);
+        await plan_generate(0, false, true);
         let percPerDay = 100 / days;
 
         let perc = 0;
@@ -17,8 +17,6 @@ async function displayModeLoop() {
         bar.style.transition = "";
 
         for (let index = 0; index < days; index++) {
-            let data = await plan_move(1);
-
             let percPerMove =
                 percPerDay / Math.ceil(home.scrollHeight / window.innerHeight);
 
@@ -32,6 +30,12 @@ async function displayModeLoop() {
 
                 await new Promise((resolve) => setTimeout(resolve, 7000));
             }
+
+            if(index + 1 == days){
+                break;
+            }
+            
+            let data = await plan_move(1);
         }
     }
 }
